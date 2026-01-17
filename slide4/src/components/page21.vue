@@ -1,6 +1,6 @@
 <template lang="">
 <div>
-<button v-on:click="this.ahihi = !ahihi" v-html="ahihi?
+<button v-on:click="this.dinn = !dinn" v-html="dinn?
 'show' : 'hide'"> </button>
 </div>
 </template>
@@ -8,7 +8,7 @@
 export default {
 data() {
 return {
-ahihi: true
+dinn: true
 
 }
 
