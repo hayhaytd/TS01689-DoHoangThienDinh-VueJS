@@ -2,9 +2,32 @@
   <div class="container mt-5">
     <h1 class="text-center">Kiến thức sức khỏe cộng đồng</h1>
 
+    <!-- PHẦN TÍNH ĐIỂM -->
+    <div class="my-4 text-center">
+      <input
+        type="number"
+        v-model="score"
+        class="form-control w-25 mx-auto mb-2"
+        placeholder="Nhập điểm"
+      />
+
+      <button class="btn btn-primary" @click="check">
+        Kiểm tra
+      </button>
+
+      <p v-if="result === 'pass'" class="mt-3 text-success fw-bold">
+        ĐẬU
+      </p>
+
+      <p v-else-if="result === 'fail'" class="mt-3 text-danger fw-bold">
+        RỚT
+      </p>
+    </div>
+
+    <!-- DANH SÁCH BÀI VIẾT -->
     <div class="row">
       <div class="col-sm-4" v-for="(item, index) in items" :key="index">
-        <div class="card">
+        <div class="card mb-3">
           <img :src="item.image" class="card-img-top" />
           <div class="card-body">
             <h3 class="card-title">{{ item.title }}</h3>
@@ -19,9 +42,22 @@
 </template>
 
 <script setup>
+import { ref } from 'vue'
+
 import img1 from '../assets/spinach_300x300.jpg'
 import img2 from '../assets/sesameoil_300x300.jpg'
 import img3 from '../assets/orange_300x300.jpg'
+
+const score = ref('')
+const result = ref('')
+
+const check = () => {
+  if (score.value >= 5) {
+    result.value = 'pass'
+  } else {
+    result.value = 'fail'
+  }
+}
 
 const items = [
   {
