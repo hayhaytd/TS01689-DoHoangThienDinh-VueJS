@@ -1,6 +1,5 @@
 <template>
 
-<!-- CAROUSEL (GIỮ ẢNH ONLINE) -->
 <div class="container mt-4">
   <div class="carousel slide" data-bs-ride="carousel">
     <div class="carousel-inner rounded">
@@ -22,45 +21,45 @@
     <aside class="col-md-4">
       <div class="card mb-4">
         <div class="card-body text-center">
-          <h5 class="fw-bold">Về HealthBlog</h5>
+          <h5 class="fw-bold">Về HealthMyBlog</h5>
           <p class="small text-muted">
             Chia sẻ kiến thức về sức khỏe, dinh dưỡng và lối sống lành mạnh.
           </p>
         </div>
       </div>
 
-  <!-- CHUYÊN MỤC -->
-  <h4 class="text-info fw-bold mb-3">Chuyên mục</h4>
+  <h4 class="mb-4">Chuyên mục</h4>
 
-  <div class="list-group shadow-sm mb-4">
-    <a href="#"
-       class="list-group-item list-group-item-action d-flex justify-content-between align-items-center bg-info text-white">
-      Chế độ tập
-      <span class="badge bg-primary">12</span>
-    </a>
 
-    <a href="#"
-       class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
-      Chế độ dinh dưỡng
-      <span class="badge bg-primary">15</span>
-    </a>
+<div class="list-group shadow-sm mb-4">
+  <a href="#"
+     class="list-group-item list-group-item-action d-flex justify-content-between align-items-center bg-primary text-white">
+    Chế độ tập
+    <span class="badge bg-light text-primary">12</span>
+  </a>
 
-    <a href="#"
-       class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
-      Cẩm nang cuộc sống
-      <span class="badge bg-primary">99</span>
-    </a>
-  </div>
+  <a href="#"
+     class="list-group-item list-group-item d-flex justify-content-between align-items-center">
+    Chế độ dinh dưỡng
+    <span class="badge bg-primary">15</span>
+  </a>
 
-  <!-- BÀI VIẾT NỔI BẬT -->
+  <a href="#"
+     class="list-group-item list-group-item d-flex justify-content-between align-items-center">
+    Cẩm nang cuộc sống
+    <span class="badge bg-primary">99</span>
+  </a>
+</div>
+
+
   <div class="card shadow-sm">
     <div class="card-header bg-white">
-      <h4 class="text-info fw-bold mb-0">Bài viết nổi bật</h4>
+       <h4 class="mb-4">Bài viết nổi bật</h4>
     </div>
 
     <div class="card-body">
 
-      <!-- BÀI 1 -->
+
       <div class="d-flex gap-2 mb-4">
         <img src="/images/spinach.jpg"
              class="rounded-circle"
@@ -73,7 +72,7 @@
         </div>
       </div>
 
-      <!-- BÀI 2 -->
+
       <div class="d-flex gap-2 mb-4">
         <img src="/images/orange.jpg"
              class="rounded-circle"
@@ -86,7 +85,7 @@
         </div>
       </div>
 
-      <!-- BÀI 3 -->
+
       <div class="d-flex gap-2">
         <img src="/images/coconut.jpg"
              class="rounded-circle"
@@ -105,13 +104,12 @@
 </aside>
 
 
-    <!-- BÀI VIẾT -->
     <section class="col-md-8">
       <h4 class="mb-4">Bài viết nổi bật</h4>
 
       <div class="row g-3">
 
-        <!-- BÀI 1 -->
+
         <div class="col-md-6">
           <div class="card h-100">
             <img src="/images/post1.jpg" class="card-img-top">
@@ -125,7 +123,7 @@
           </div>
         </div>
 
-        <!-- BÀI 2 -->
+
         <div class="col-md-6">
           <div class="card h-100">
             <img src="/images/post2.jpg" class="card-img-top">
@@ -139,7 +137,7 @@
           </div>
         </div>
 
-        <!-- BÀI 3 -->
+
         <div class="col-md-6">
           <div class="card h-100">
             <img src="/images/post3.jpg" class="card-img-top">
@@ -153,7 +151,7 @@
           </div>
         </div>
 
-        <!-- BÀI 4 -->
+
         <div class="col-md-6">
           <div class="card h-100">
             <img src="/images/post4.jpg" class="card-img-top">
