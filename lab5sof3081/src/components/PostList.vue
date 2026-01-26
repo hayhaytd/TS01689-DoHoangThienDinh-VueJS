@@ -1,28 +1,25 @@
 <template>
   <div>
     <h2>Danh sách bài viết</h2>
-
-    <div
-      v-for="(post, index) in posts"
-      :key="index"
-      class="post"
-      :class="{ highlighted: post.title.length > 20 }"
-      :style="{ color: index % 2 === 0 ? 'green' : 'blue' }"
-    >
-      <h3 class="text-success">{{ post.title }}</h3>
-      <h4 class="text-danger">{{ post.author }}</h4>
-      <p>{{ post.content }}</p>
+<div v-for="(post, index) in posts" :key="index" :class="{ 'highlighted': post.title.length > 20 }"
+            :style="{ backgroundColor: post.backgroundColor, color: post.textColor }" class="post">
+            <h3 class="text-success">{{ post.title }}</h3>
+            <h4 class="text-danger">{{ post.author }}</h4>
+            <p>{{ post.content }}</p>
+        </div>
     </div>
-  </div>
 </template>
 
-<script setup>
-defineProps({
-  posts: {
-    type: Array,
-    required: true
-  }
-})
+<script>
+export default {
+    name: "PostList",
+    props: {
+        posts: {
+            type: Array,
+            required: true
+        }
+    }
+};
 </script>
 
 <style>

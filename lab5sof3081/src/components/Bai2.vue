@@ -4,7 +4,7 @@
       v-model="userInput"
       class="form-control mb-3"
       placeholder="Nhập dữ liệu vào đây"
-    />
+    />  
     <p>Giá trị bạn nhập: {{ userInput }}</p>
   </div>
 </template>

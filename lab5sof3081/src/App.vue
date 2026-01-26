@@ -1,4 +1,4 @@
-
+<!--
 <script setup>
 import bai1 from './components/bai1.vue';
 import bai2 from './components/bai2.vue';
@@ -11,9 +11,10 @@ import bai3 from './components/bai3.vue';
     <bai1 />
   </main>
 </template>
+-->
 
 
-<!-- <template>
+ <template>
   <div id="app">
     <div class="container">
       <CreatePost @add-post="addPost" />
@@ -42,4 +43,4 @@ function addPost(post) {
   margin: 0 auto;
   padding: 20px;
 }
-</style> -->
+</style> 
