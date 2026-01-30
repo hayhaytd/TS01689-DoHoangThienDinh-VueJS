@@ -31,7 +31,7 @@ const items = ref([
         content: 'Một số loại gia vị cung cấp nhiều polyphenol chống oxy hóa cao hơn các loại gia vị quen thuộc khác. Với một lượng nhỏ các món ăn đã thêm hương thơm và vị hấp dẫn...'
     },
     {
-        image: '/src/assets/images/dau.jpg',
+        image: '/src/assets/images/hat-dau.jpg',
         title: '9 loại đậu bổ dưỡng nên dùng nhiều',
         content: 'Đậu lăng, đậu nành, đậu phộng, đậu Hà Lan giàu chất xơ, protein cùng nhiều vitamin và khoáng chất giúp giảm lượng đường trong máu, tốt cho tim...'
     }
