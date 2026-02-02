@@ -58,7 +58,7 @@
 import { ref } from 'vue';
 
 const students = ref([
-    { name: 'Thiên Định', score: 6.7, dob: '2008-06-01' },
+    { name: 'Đỗ Hoàng Thiên Định', score: 6.7, dob: '2008-06-01' },
 ]);
 
 const student = ref({ name: '', score: null, dob: '' });
