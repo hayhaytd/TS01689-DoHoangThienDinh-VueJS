@@ -1,174 +1,168 @@
 <template>
+  <!-- CAROUSEL -->
+  <div class="container mt-4">
+    <div class="carousel slide" data-bs-ride="carousel">
+      <div class="carousel-inner rounded shadow-sm">
 
-<div class="container mt-4">
-  <div class="carousel slide" data-bs-ride="carousel">
-    <div class="carousel-inner rounded">
-      <div class="carousel-item active">
-        <img src="https://picsum.photos/1200/400?health" class="d-block w-100">
-      </div>
-      <div class="carousel-item">
-        <img src="https://picsum.photos/1200/400?fitness" class="d-block w-100">
+        <div class="carousel-item active">
+          <img src="https://picsum.photos/1200/350?health" class="d-block w-100">
+        </div>
+
+        <div class="carousel-item">
+          <img src="https://picsum.photos/1200/350?fitness" class="d-block w-100">
+        </div>
+
       </div>
     </div>
   </div>
-</div>
 
-      <!-- MAIN CONTENT -->
-<div class="container my-5">
-  <div class="row">
+  <!-- MAIN -->
+  <div class="container my-5">
+    <div class="row">
 
-    <!-- SIDEBAR -->
-    <aside class="col-md-4">
-      <div class="card mb-4">
-        <div class="card-body text-center">
-          <h5 class="fw-bold">Về HealthMyBlog</h5>
-          <p class="small text-muted">
-            Chia sẻ kiến thức về sức khỏe, dinh dưỡng và lối sống lành mạnh.
-          </p>
+      <!-- SIDEBAR -->
+      <aside class="col-md-4">
+
+        <div class="card mb-4 shadow-sm">
+          <div class="card-body text-center">
+            <h5 class="fw-bold">Về HealthBlog</h5>
+            <p class="small text-muted">
+              Chia sẻ kiến thức sức khỏe, dinh dưỡng và lối sống lành mạnh.
+            </p>
+          </div>
         </div>
-      </div>
 
-  <h4 class="mb-4">Chuyên mục</h4>
+        <!-- CATEGORY -->
+        <div class="list-group shadow-sm mb-4">
+          <div class="list-group-item bg-primary text-white">
+            Chuyên mục
+          </div>
 
+          <div class="list-group-item d-flex justify-content-between">
+            Dinh dưỡng
+            <span class="badge bg-primary">{{ posts.length }}</span>
+          </div>
 
-<div class="list-group shadow-sm mb-4">
-  <a href="#"
-     class="list-group-item list-group-item-action d-flex justify-content-between align-items-center bg-primary text-white">
-    Chế độ tập
-    <span class="badge bg-light text-primary">12</span>
-  </a>
+          <div class="list-group-item d-flex justify-content-between">
+            Tập luyện
+            <span class="badge bg-primary">4</span>
+          </div>
 
-  <a href="#"
-     class="list-group-item list-group-item d-flex justify-content-between align-items-center">
-    Chế độ dinh dưỡng
-    <span class="badge bg-primary">15</span>
-  </a>
-
-  <a href="#"
-     class="list-group-item list-group-item d-flex justify-content-between align-items-center">
-    Cẩm nang cuộc sống
-    <span class="badge bg-primary">99</span>
-  </a>
-</div>
-
-
-  <div class="card shadow-sm">
-    <div class="card-header bg-white">
-       <h4 class="mb-4">Bài viết nổi bật</h4>
-    </div>
-
-    <div class="card-body">
-
-
-      <div class="d-flex gap-2 mb-4">
-        <img src="/images/spinach.jpg"
-             class="rounded-circle"
-             style="width:80px;height:80px;object-fit:cover;">
-        <div>
-          <h6 class="fw-bold mb-1">Lợi ích khi ăn rau mỗi ngày</h6>
-          <p class="small text-secondary mb-0">
-            Rau xanh giúp tăng cường thị lực, kiểm soát cân nặng và phòng bệnh.
-          </p>
+          <div class="list-group-item d-flex justify-content-between">
+            Lối sống
+            <span class="badge bg-primary">6</span>
+          </div>
         </div>
-      </div>
 
+        <!-- FEATURED SMALL -->
+        <div class="card shadow-sm">
+          <div class="card-header bg-white fw-bold">
+            Bài nổi bật
+          </div>
 
-      <div class="d-flex gap-2 mb-4">
-        <img src="/images/orange.jpg"
-             class="rounded-circle"
-             style="width:80px;height:80px;object-fit:cover;">
-        <div>
-          <h6 class="fw-bold mb-1">9 tác dụng tuyệt vời của cam</h6>
-          <p class="small text-secondary mb-0">
-            Cam giàu vitamin C, tăng đề kháng và làm chậm quá trình lão hóa.
-          </p>
+          <div class="card-body">
+
+            <div
+              v-for="p in posts.slice(0,3)"
+              :key="p.id"
+              class="d-flex gap-2 mb-3"
+            >
+              <img :src="p.image"
+                   style="width:70px;height:70px;object-fit:cover"
+                   class="rounded">
+
+              <div>
+                <div class="fw-bold small">{{ p.title }}</div>
+                <div class="text-muted small">{{ p.date }}</div>
+              </div>
+
+            </div>
+
+          </div>
         </div>
-      </div>
 
+      </aside>
 
-      <div class="d-flex gap-2">
-        <img src="/images/coconut.jpg"
-             class="rounded-circle"
-             style="width:80px;height:80px;object-fit:cover;">
-        <div>
-          <h6 class="fw-bold mb-1">10 công dụng bất ngờ từ dầu dừa</h6>
-          <p class="small text-secondary mb-0">
-            Dầu dừa giúp dưỡng da, tốt cho tiêu hóa và chăm sóc sức khỏe.
-          </p>
+      <!-- POST LIST -->
+      <section class="col-md-8">
+
+        <h4 class="mb-4">Danh sách bài viết</h4>
+
+        <div class="row g-3">
+
+          <div
+            class="col-md-6"
+            v-for="p in posts"
+            :key="p.id"
+          >
+            <div class="card h-100 shadow-sm">
+
+              <img :src="p.image" class="card-img-top">
+
+              <div class="card-body d-flex flex-column">
+
+                <h6 class="fw-bold">{{ p.title }}</h6>
+
+                <p class="small text-muted flex-grow-1">
+                  {{ p.summary }}
+                </p>
+
+                <button
+                  class="btn btn-outline-primary btn-sm"
+                  @click="goDetail(p.id)"
+                >
+                  Xem chi tiết
+                </button>
+
+              </div>
+            </div>
+          </div>
+
         </div>
-      </div>
+
+      </section>
 
     </div>
   </div>
-
-</aside>
-
-
-    <section class="col-md-8">
-      <h4 class="mb-4">Bài viết nổi bật</h4>
-
-      <div class="row g-3">
-
-
-        <div class="col-md-6">
-          <div class="card h-100">
-            <img src="/images/post1.jpg" class="card-img-top">
-            <div class="card-body">
-              <h6 class="fw-bold">Dinh dưỡng khoa học</h6>
-              <p class="small text-muted">
-                Chế độ ăn cân bằng giúp cơ thể khỏe mạnh và phòng bệnh.
-              </p>
-              <button class="btn btn-outline-primary btn-sm">Xem</button>
-            </div>
-          </div>
-        </div>
-
-
-        <div class="col-md-6">
-          <div class="card h-100">
-            <img src="/images/post2.jpg" class="card-img-top">
-            <div class="card-body">
-              <h6 class="fw-bold">Tập thể dục mỗi ngày</h6>
-              <p class="small text-muted">
-                Vận động 30 phút mỗi ngày giúp tăng cường sức đề kháng.
-              </p>
-              <button class="btn btn-outline-primary btn-sm">Xem</button>
-            </div>
-          </div>
-        </div>
-
-
-        <div class="col-md-6">
-          <div class="card h-100">
-            <img src="/images/post3.jpg" class="card-img-top">
-            <div class="card-body">
-              <h6 class="fw-bold">Giấc ngủ chất lượng</h6>
-              <p class="small text-muted">
-                Ngủ đủ giấc giúp tinh thần minh mẫn và phục hồi cơ thể.
-              </p>
-              <button class="btn btn-outline-primary btn-sm">Xem</button>
-            </div>
-          </div>
-        </div>
-
-
-        <div class="col-md-6">
-          <div class="card h-100">
-            <img src="/images/post4.jpg" class="card-img-top">
-            <div class="card-body">
-              <h6 class="fw-bold">Sức khỏe tinh thần</h6>
-              <p class="small text-muted">
-                Giữ tinh thần tích cực giúp cuộc sống cân bằng hơn.
-              </p>
-              <button class="btn btn-outline-primary btn-sm">Xem</button>
-            </div>
-          </div>
-        </div>
-
-      </div>
-    </section>
-
-  </div>
-</div>
-
 </template>
+
+<script setup>
+import { useRouter } from 'vue-router'
+
+const router = useRouter()
+
+function goDetail(id) {
+  router.push('/post/' + id)
+}
+
+const posts = [
+  {
+    id: 1,
+    title: 'Dinh dưỡng khoa học',
+    summary: 'Chế độ ăn cân bằng giúp cơ thể khỏe mạnh.',
+    image: 'https://picsum.photos/400/250?food',
+    date: '01/01/2026'
+  },
+  {
+    id: 2,
+    title: 'Tập thể dục mỗi ngày',
+    summary: 'Vận động giúp tăng đề kháng.',
+    image: 'https://picsum.photos/400/250?gym',
+    date: '02/01/2026'
+  },
+  {
+    id: 3,
+    title: 'Giấc ngủ chất lượng',
+    summary: 'Ngủ đủ giúp phục hồi cơ thể.',
+    image: 'https://picsum.photos/400/250?sleep',
+    date: '03/01/2026'
+  },
+  {
+    id: 4,
+    title: 'Sức khỏe tinh thần',
+    summary: 'Giữ tinh thần tích cực.',
+    image: 'https://picsum.photos/400/250?mind',
+    date: '04/01/2026'
+  }
+]
+</script>
