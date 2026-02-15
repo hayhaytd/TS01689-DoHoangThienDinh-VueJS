@@ -1,6 +1,6 @@
-import { reactive } from 'vue'
+import { reactive, watch } from 'vue'
 
-export const store = reactive({
+const Database = {
 
   user: null,
 
@@ -48,7 +48,7 @@ export const store = reactive({
       id: 2,
       title: 'Chế độ ăn uống lành mạnh',
       content: 'Ăn nhiều rau củ và trái cây mỗi ngày giúp cơ thể được cung cấp đầy đủ vitamin, khoáng chất và chất xơ cần thiết. Một chế độ ăn cân bằng không chỉ giúp tăng cường hệ miễn dịch mà còn hỗ trợ tiêu hóa tốt hơn và giảm nguy cơ mắc các bệnh tim mạch. Việc hạn chế thực phẩm chế biến sẵn, đồ chiên nhiều dầu mỡ và nước ngọt có gas cũng góp phần cải thiện sức khỏe lâu dài. Bạn nên xây dựng thói quen ăn đa dạng thực phẩm, bổ sung đủ nước và kiểm soát khẩu phần hợp lý. Chỉ cần thay đổi nhỏ trong bữa ăn hàng ngày cũng có thể tạo nên sự khác biệt lớn cho thể trạng và mức năng lượng của cơ thể.',
-      author: 'Kim Nhật Anh',
+      author: 'Đỗ Hoàng Thiên Định',
       date: '02/01/2026',
       image: '/images/post1.jpg',
       comments: [
@@ -89,7 +89,7 @@ export const store = reactive({
     {
       id: 4,
       title: 'Sức khỏe tinh thần',
-      content: 'Giữ tinh thần tích cực là yếu tố quan trọng giúp cuộc sống cân bằng và bền vững hơn. Khi tâm trạng ổn định, bạn sẽ xử lý áp lực tốt hơn, đưa ra quyết định sáng suốt hơn và duy trì các mối quan hệ lành mạnh. Những thói quen như tập thể dục, thiền, đọc sách hoặc dành thời gian cho sở thích cá nhân có thể giúp giảm căng thẳng đáng kể. Ngoài ra, việc chia sẻ cảm xúc với người thân và bạn bè cũng giúp giải tỏa áp lực tâm lý. Chăm sóc sức khỏe tinh thần không phải là điều xa xỉ, mà là một phần thiết yếu để duy trì chất lượng sống lâu dài.',
+      content: 'Giữ tinh thần tích cực là yếu tố quan trọng giúp cuộc sống cân bằng và bền vững hơn...',
       author: 'Đỗ Hoàng Thiên Định',
       date: '04/01/2026',
       image: '/images/post4.jpg',
@@ -109,4 +109,18 @@ export const store = reactive({
 
   ]
 
-})
+}
+
+const saved = localStorage.getItem('luufile')
+
+export const store = reactive(
+  saved ? JSON.parse(saved) : Database
+)
+
+watch(
+  store,
+  (val) => {
+    localStorage.setItem('luufile', JSON.stringify(val))
+  },
+  { deep: true }
+)

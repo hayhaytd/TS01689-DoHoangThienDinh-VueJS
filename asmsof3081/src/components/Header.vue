@@ -89,7 +89,7 @@ function logout() {
 
               <!-- AVATAR -->
               <img
-                :src="store.user.avatar || 'https://i.pravatar.cc/40'"
+                :src="store.user.avatar || '/images/avatar1ne.png'"
                 width="32"
                 height="32"
                 class="rounded-circle border border-light"

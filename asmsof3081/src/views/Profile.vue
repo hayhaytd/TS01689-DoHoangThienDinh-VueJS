@@ -6,7 +6,7 @@ import { ref } from 'vue'
 const name = ref(store.user?.name || '')
 const email = ref(store.user?.email || '')
 const pass = ref(store.user?.pass || '')
-const avatar = ref(store.user?.avatar || 'https://i.pravatar.cc/150')
+const avatar = ref(store.user?.avatar || '/images/avatar1ne.png')
 
 /* ===== xử lý chọn ảnh ===== */
 function onFile(e) {

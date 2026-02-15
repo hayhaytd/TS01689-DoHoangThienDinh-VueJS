@@ -18,11 +18,11 @@ const routes = [
 
   { path: '/post/:id', component: PostDetail },
 
-  /* ===== CẦN LOGIN ===== */
+
   { path: '/profile', component: Profile, meta: { auth: true } },
   { path: '/create', component: CreatePost, meta: { auth: true } },
 
-  /* ===== SỬA BÀI ===== */
+
   { path: '/edit/:id', component: EditPost, meta: { auth: true } },
 ]
 

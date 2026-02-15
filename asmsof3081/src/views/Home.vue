@@ -20,7 +20,7 @@ function remove(id) {
   }
 }
 
-/* ===== PAGINATION ===== */
+
 
 const perPage = 4
 const currentPage = ref(1)
@@ -44,7 +44,7 @@ function setPage(p) {
 
 <template>
 
-<!-- CAROUSEL -->
+
 <div class="container mt-3">
   <div id="carouselE" class="carousel slide" data-bs-ride="carousel">
 
@@ -78,11 +78,11 @@ function setPage(p) {
 </div>
 
 
-<!-- MAIN -->
+
 <div class="container my-5">
 <div class="row">
 
-<!-- SIDEBAR -->
+
 <aside class="col-md-4">
 
 <div class="card mb-4 shadow-sm border border-dark">
@@ -112,12 +112,12 @@ Nội dung thực tế, dễ áp dụng vào thói quen sinh hoạt hàng ngày.
          :key="p.id"
          class="d-flex gap-3 mb-3 border-bottom pb-3">
 
-      <!-- ẢNH -->
+
       <img :src="p.image"
            style="width:80px;height:70px;object-fit:cover"
            class="rounded">
 
-      <!-- TEXT -->
+
       <div class="flex-grow-1">
 
         <div class="fw-bold small">
@@ -148,7 +148,7 @@ Nội dung thực tế, dễ áp dụng vào thói quen sinh hoạt hàng ngày.
 </aside>
 
 
-<!-- POSTS -->
+
 <section class="col-md-8">
 
 <h4 class="mb-4">Danh sách bài viết</h4>
@@ -201,7 +201,7 @@ Xóa
 </div>
 
 
-<!-- PAGINATION -->
+
 <nav class="mt-4">
 <ul class="pagination justify-content-center">
 
