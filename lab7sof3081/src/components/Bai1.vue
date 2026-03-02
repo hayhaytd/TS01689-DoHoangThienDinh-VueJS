@@ -31,8 +31,7 @@
         <button
           class="btn btn-danger btn-sm"
           @click="removeList(index)"
-        >
-          Xóa
+        > Xóa
         </button>
       </li>
     </ul>

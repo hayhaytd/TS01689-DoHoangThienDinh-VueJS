@@ -1,10 +1,6 @@
 <template>
-<h1>Trang chủ</h1>
-<nav>
-<RouterLink to="/">Go to Home</RouterLink>
-<RouterLink to="/about">Go to About</RouterLink>
-</nav>
-<main>
-<RouterView />
-</main>
+  <div class="container mt-4">
+    <h2 class="text-center mb-4">demo</h2>
+    <router-view />
+  </div>
 </template>

@@ -1,4 +1,4 @@
-<script>
+<!-- <script>
 export default {
 methods: {
 goToAbout () {
@@ -11,4 +11,4 @@ this.$router.push('/about')
 <template>
 <h2>HomeView</h2>
 <button @click="goToAbout">Go to About</button>
-</template>
+</template> -->

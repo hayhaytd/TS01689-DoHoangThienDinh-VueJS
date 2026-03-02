@@ -9,7 +9,7 @@ import UserProfileSettings from "../views/UserProfileSettings.vue";
 import Login from "../views/Login.vue";
 import Dashboard from "../views/Dashboard.vue";
 
-let isAuthenticated = false; // mock auth
+let isAuthenticated = false; 
 
 export function setAuth(v) {
   isAuthenticated = v;

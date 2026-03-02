@@ -1,4 +1,4 @@
-<script setup>
+<!-- <script setup>
 import { computed } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
 
@@ -21,4 +21,4 @@ const search = computed({
     Search:
     <input v-model.trim="search" maxlength="20">
   </label>
-</template>
+</template> -->
